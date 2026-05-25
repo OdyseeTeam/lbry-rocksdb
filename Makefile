@@ -34,7 +34,7 @@ src/rocksdb/librocksdb.a:
 		-Dzstd_LIBRARIES=../zstd-1.4.9/lib \
 		-DZLIB_INCLUDE_DIR=../zlib-1.2.12 \
 		-DZLIB_LIBRARY=./zlib-1.2.12 \
-		-DCMAKE_CXX_FLAGS="-fPIC -I../snappy-1.1.8/build -I../zstd-1.4.9/lib/dictBuilder" \
+		-DCMAKE_CXX_FLAGS="-fPIC -Wno-error=redundant-move -Wno-error=maybe-uninitialized -I../snappy-1.1.8/build -I../zstd-1.4.9/lib/dictBuilder" \
 		.. && make -j $(JOBS))
 
 	cp src/rocksdb/build/librocksdb.a src/rocksdb/librocksdb.a
